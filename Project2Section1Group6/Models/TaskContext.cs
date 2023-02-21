@@ -13,7 +13,7 @@ namespace Project2Section1Group6.Models
             //Leave blank for now
         }
         //Create Tables
-        public DbSet<Task> Task { get; set; }
+        public DbSet<Task> Tasks { get; set; }
         public DbSet<Category> Categories { get; set; }
 
 
