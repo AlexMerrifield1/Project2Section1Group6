@@ -22,6 +22,7 @@ namespace Project2Section1Group6.Models
         [Required]
         public int QuadrantNumber { get; set; }
         [Required]
+        [MaxLength(50)]
         public string TaskDescription { get; set; }
         [MaxLength(200)]
         public string TaskNotes { get; set; }
