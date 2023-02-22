@@ -11,28 +11,22 @@ namespace Project2Section1Group6.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         // Initialize instance of object
         private TaskContext myContext { get; set; }
-                                                             // Pass In data from context file
-        public HomeController(ILogger<HomeController> logger, TaskContext pointlessName)
+        // --------------------------------------Controller---------------------------------------
+        // Pass In data from context file
+        public HomeController(TaskContext pointlessName)
         {
-            _logger = logger;
-
             // Lock-in instance of object
             myContext = pointlessName;
         }
+        // --------------------------------------INDEX---------------------------------------
         // Index (HomePage) Direct
         public IActionResult Index()
         {
             return View();
         }
-        // Privacy Direct
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
+        // -----------------------------------CREATE-TASKS------------------------------------------
         //Create Task Page Direct
         [HttpGet]
         public IActionResult CreateTasks()
@@ -57,14 +51,14 @@ namespace Project2Section1Group6.Controllers
                 return View(t);
             }
         }
-
+        // ---------------------------------QUADRANTS--------------------------------------------
         //Quadrant Page Direct
         [HttpGet]
         public IActionResult Quadrants()
         {
             return View();
         }
-
+        // -----------------------------EDIT------------------------------------------------
         [HttpGet]
         public IActionResult Edit(int localID) // Edit where where the ID is 
         {
@@ -82,6 +76,7 @@ namespace Project2Section1Group6.Controllers
 
             return RedirectToAction("Quadrants");
         }
+        // --------------------------------DELETE---------------------------------------------
         [HttpGet]
         public IActionResult Delete(int localID) // remove data entry where ID is
         {
@@ -96,20 +91,6 @@ namespace Project2Section1Group6.Controllers
             
 
             return RedirectToAction("Quadrants");
-        }
-
-
-
-
-
-
-
-
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
