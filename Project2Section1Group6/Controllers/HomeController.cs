@@ -52,7 +52,7 @@ namespace Project2Section1Group6.Controllers
             }
             else //If Invalid
             {
-                ViewBag.Majors = myContext.Categories.ToList();
+                ViewBag.Cat = myContext.Categories.ToList();
 
                 return View(t);
             }
