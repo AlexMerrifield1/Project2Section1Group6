@@ -21,6 +21,7 @@ namespace Project2Section1Group6.Models
         public string TaskTitle { get; set; }
         [Required]
         public int QuadrantNumber { get; set; }
+        //Datetime problem
         [DataType(DataType.Date)]
         public DateTime? DueDate { get; set; }
         [MaxLength(200)]

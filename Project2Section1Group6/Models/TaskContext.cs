@@ -35,7 +35,7 @@ namespace Project2Section1Group6.Models
                     QuadrantNumber = 1,
                     TaskTitle = "Do your chores",
                     Completed = false,
-                    DueDate = "2023/08/06",
+                    DueDate = "2023-08-06",
                     TaskNotes = ""
                 }
             );
