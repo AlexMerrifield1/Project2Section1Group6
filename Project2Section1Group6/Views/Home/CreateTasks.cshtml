@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Create Tasks";
+}
+
+@model Project2Section1Group6.Models.Task
+
+<h1>@ViewData["Title"]</h1>
+<div>
+    <form method="post">
+        <div asp-validation-summary="All"></div>
+        <input asp-for="TaskID" type="hidden" />
+        <label>Task Title</label>
+        <input asp-for="TaskTitle" /><br />
+        <label>Due Date</label>
+        <input asp-for="DueDate" /><br />
+        <label>Quadrant</label>
+        <input asp-for="QuadrantNumber" /><br />
+        <label asp-for="CategoryID">Category</label>
+        <select asp-for="CategoryID">
+            <option value="">Select Category</option>
+            @foreach (Category c in ViewBag.Categories)
+            {
+            <option value="@c.CategoryID">@c.CategoryName</option>
+            }
+        </select><br />
+        <label>Completed</label>
+        <select asp-for="edited">
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select><br />
+    </form>
+</div>
+
+<p></p>
