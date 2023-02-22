@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Project2Section1Group6.Controllers
 {
@@ -38,13 +37,25 @@ namespace Project2Section1Group6.Controllers
         [HttpGet]
         public IActionResult CreateTasks()
         {
+            ViewBag.Cat = myContext.Categories.ToList();
             return View();
         }
         //Return data for database from Create Task Page
         [HttpPost]
-        public IActionResult CreateTasks()
+        public IActionResult CreateTasks(Task t)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                myContext.Add(t);
+                myContext.SaveChanges();
+                return View ("Quadrants");
+            }
+            else //If Invalid
+            {
+                ViewBag.Majors = myContext.Categories.ToList();
+
+                return View(t);
+            }
         }
 
         //Quadrant Page Direct
@@ -59,7 +70,7 @@ namespace Project2Section1Group6.Controllers
         {
             ViewBag.Cat = myContext.Categories.ToList();
 
-            var application = myContext.Responses.Single(x => x.ForeignID == localID);
+            var application = myContext.Tasks.Single(x => x.TaskID == localID);
 
             return View("CreateTask", application);
         }
@@ -74,15 +85,15 @@ namespace Project2Section1Group6.Controllers
         [HttpGet]
         public IActionResult Delete(int localID) // remove data entry where ID is
         {
-            var application = myContext.Responses.Single(x => x.ForeignID == localID);
+            var application = myContext.Tasks.Single(x => x.TaskID == localID);
             return View(application);
         }
         [HttpPost]
         public IActionResult Delete(Task t) // remove data entry where Movie ID is
         {
-            myContext.Responses.Remove(t);
+            myContext.Tasks.Remove(t);
             myContext.SaveChanges();
-
+            
 
             return RedirectToAction("Quadrants");
         }

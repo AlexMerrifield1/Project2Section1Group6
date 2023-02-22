@@ -23,7 +23,7 @@ namespace Project2Section1Group6.Models
                 new Category { CategoryID = 1, CategoryType = "Home" },
                 new Category { CategoryID = 2, CategoryType = "School" },
                 new Category { CategoryID = 3, CategoryType = "Work" },
-                new Category { CategoryID = 4, CategoryType = "Church" },
+                new Category { CategoryID = 4, CategoryType = "Church" }
             );
 
             mb.Entity<Task>().HasData(
