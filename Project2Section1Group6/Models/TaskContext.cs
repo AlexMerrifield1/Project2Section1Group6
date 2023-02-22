@@ -35,7 +35,7 @@ namespace Project2Section1Group6.Models
                     QuadrantNumber = 1,
                     TaskTitle = "Do your chores",
                     Completed = false,
-                    TaskDescription = "You need to clean your room and then vacuum the staircases.",
+                    DueDate = "2023/08/06",
                     TaskNotes = ""
                 }
             );
