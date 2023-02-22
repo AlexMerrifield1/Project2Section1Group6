@@ -18,7 +18,7 @@
         <label asp-for="CategoryID">Category</label>
         <select asp-for="CategoryID">
             <option value="">Select Category</option>
-            @foreach (Category c in ViewBag.Categories)
+            @foreach (Category c in ViewBag.Cat)
             {
             <option value="@c.CategoryID">@c.CategoryType</option>
             }
