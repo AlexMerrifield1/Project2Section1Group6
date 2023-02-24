@@ -32,7 +32,7 @@ namespace Project2Section1Group6.Controllers
         public IActionResult CreateTasks()
         {
             ViewBag.Cat = myContext.Categories.ToList();
-            return View();
+            return View("CreateTasks", new Task());
         }
         //Return data for database from Create Task Page
         [HttpPost]

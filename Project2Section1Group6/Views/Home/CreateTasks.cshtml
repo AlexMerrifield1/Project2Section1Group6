@@ -8,7 +8,7 @@
 <div>
     <form method="post">
         <div asp-validation-summary="All"></div>
-        @*<input asp-for="TaskID" type="hidden" />*@
+        <input asp-for="TaskID" type="hidden" />
         <label>Task Title</label>
         <input asp-for="TaskTitle" /><br />
         <label>Due Date</label>
@@ -18,6 +18,7 @@
         <label asp-for="CategoryID">Category</label>
         <select asp-for="CategoryID">
             <option value="">Select Category</option>
+        @*Loop through categories to display in a drop down*@
             @foreach (Category c in ViewBag.Cat)
             {
             <option value="@c.CategoryID">@c.CategoryType</option>

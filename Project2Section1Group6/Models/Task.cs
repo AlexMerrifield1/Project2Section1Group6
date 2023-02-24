@@ -20,6 +20,7 @@ namespace Project2Section1Group6.Models
         [Required]
         public string TaskTitle { get; set; }
         [Required]
+        [Range(1,4)]
         public int QuadrantNumber { get; set; }
         //Datetime problem
         public string DueDate { get; set; }
