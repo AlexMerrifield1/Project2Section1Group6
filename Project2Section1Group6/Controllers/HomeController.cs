@@ -42,7 +42,7 @@ namespace Project2Section1Group6.Controllers
             {
                 myContext.Add(t);
                 myContext.SaveChanges();
-                return View ("Quadrants");
+                return View ("Index");
             }
             else //If Invalid
             {
