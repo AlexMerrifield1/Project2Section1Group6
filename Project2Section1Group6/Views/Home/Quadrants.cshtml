@@ -22,7 +22,7 @@
                 @if (x.Completed) {}
                 else if (x.QuadrantNumber == 1)
                 {
-                    <div>@x.TaskTitle <span class="float-right"><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskID">Edit</a>&ensp;<a asp-controller="Home" asp-action="Delete">Delete</a></span></div>
+                    <div>@x.TaskTitle <span class="float-right"><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskID">Edit</a>&ensp;<a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskID">Delete</a></span></div>
                 }
             }
         </div>
@@ -33,7 +33,7 @@
                 @if (x.Completed) { }
                 else if (x.QuadrantNumber == 2)
                 {
-                    <div>@x.TaskTitle <span class="float-right"><a>Edit</a>&ensp;<a>Delete</a></span></div>
+                    <div>@x.TaskTitle <span class="float-right"><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskID">Edit</a>&ensp;<a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskID">Delete</a></span></div>
                 }
             }
         </div>
@@ -47,7 +47,7 @@
                 @if (x.Completed) { }
                 else if (x.QuadrantNumber == 3)
                 {
-                    <div>@x.TaskTitle <span class="float-right"><a>Edit</a>&ensp;<a>Delete</a></span></div>
+                    <div>@x.TaskTitle <span class="float-right"><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskID">Edit</a>&ensp;<a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskID">Delete</a></span></div>
                 }
             }
         </div>
@@ -58,7 +58,7 @@
                 @if (x.Completed) { }
                 else if (x.QuadrantNumber == 4)
                 {
-                    <div>@x.TaskTitle <span class="float-right"><a>Edit</a>&ensp;<a>Delete</a></span></div>
+                    <div>@x.TaskTitle <span class="float-right"><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskID">Edit</a>&ensp;<a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskID">Delete</a></span></div>
                 }
             }
         </div>

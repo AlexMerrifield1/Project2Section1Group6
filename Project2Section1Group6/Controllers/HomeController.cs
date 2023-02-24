@@ -61,11 +61,11 @@ namespace Project2Section1Group6.Controllers
         }
         // -----------------------------EDIT------------------------------------------------
         [HttpGet]
-        public IActionResult Edit(int localID) // Edit where where the ID is 
+        public IActionResult Edit(int id) // Edit where where the ID is 
         {
             ViewBag.Cat = myContext.Categories.ToList();
 
-            var mytasks = myContext.Tasks.Single(x => x.TaskID == 1);
+            var mytasks = myContext.Tasks.Single(x => x.TaskID == id);
 
             return View("CreateTasks", mytasks);
         }
@@ -79,9 +79,9 @@ namespace Project2Section1Group6.Controllers
         }
         // --------------------------------DELETE---------------------------------------------
         [HttpGet]
-        public IActionResult Delete(int localID) // remove data entry where ID is
+        public IActionResult Delete(int id) // remove data entry where ID is
         {
-            var application = myContext.Tasks.Single(x => x.TaskID == localID);
+            var application = myContext.Tasks.Single(x => x.TaskID == id);
             return View(application);
         }
         [HttpPost]
