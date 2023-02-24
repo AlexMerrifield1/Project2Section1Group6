@@ -68,6 +68,16 @@ namespace Project2Section1Group6.Migrations
                 columns: new[] { "TaskID", "CategoryID", "Completed", "DueDate", "QuadrantNumber", "TaskNotes", "TaskTitle" },
                 values: new object[] { 1, 1, false, "2023-08-06", 1, "", "Do your chores" });
 
+            migrationBuilder.InsertData(
+                table: "Tasks",
+                columns: new[] { "TaskID", "CategoryID", "Completed", "DueDate", "QuadrantNumber", "TaskNotes", "TaskTitle" },
+                values: new object[] { 2, 1, false, "2023-08-06", 1, "", "Test Not Completed" });
+
+            migrationBuilder.InsertData(
+                table: "Tasks",
+                columns: new[] { "TaskID", "CategoryID", "Completed", "DueDate", "QuadrantNumber", "TaskNotes", "TaskTitle" },
+                values: new object[] { 3, 1, true, "2023-08-06", 1, "", "Test Completed" });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Tasks_CategoryID",
                 table: "Tasks",

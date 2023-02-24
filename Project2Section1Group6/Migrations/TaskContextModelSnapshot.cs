@@ -93,6 +93,26 @@ namespace Project2Section1Group6.Migrations
                             QuadrantNumber = 1,
                             TaskNotes = "",
                             TaskTitle = "Do your chores"
+                        },
+                        new
+                        {
+                            TaskID = 2,
+                            CategoryID = 1,
+                            Completed = false,
+                            DueDate = "2023-08-06",
+                            QuadrantNumber = 1,
+                            TaskNotes = "",
+                            TaskTitle = "Test Not Completed"
+                        },
+                        new
+                        {
+                            TaskID = 3,
+                            CategoryID = 1,
+                            Completed = true,
+                            DueDate = "2023-08-06",
+                            QuadrantNumber = 1,
+                            TaskNotes = "",
+                            TaskTitle = "Test Completed"
                         });
                 });
 

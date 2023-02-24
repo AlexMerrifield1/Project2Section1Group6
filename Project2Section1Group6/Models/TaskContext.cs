@@ -37,6 +37,26 @@ namespace Project2Section1Group6.Models
                     Completed = false,
                     DueDate = "2023-08-06",
                     TaskNotes = ""
+                },
+                new Task
+                {
+                    TaskID = 2,
+                    CategoryID = 1,
+                    QuadrantNumber = 1,
+                    TaskTitle = "Test Not Completed",
+                    Completed = false,
+                    DueDate = "2023-08-06",
+                    TaskNotes = ""
+                },
+                new Task
+                {
+                    TaskID = 3,
+                    CategoryID = 1,
+                    QuadrantNumber = 1,
+                    TaskTitle = "Test Completed",
+                    Completed = true,
+                    DueDate = "2023-08-06",
+                    TaskNotes = ""
                 }
             );
         }

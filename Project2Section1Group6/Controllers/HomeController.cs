@@ -56,7 +56,8 @@ namespace Project2Section1Group6.Controllers
         [HttpGet]
         public IActionResult Quadrants()
         {
-            return View();
+            var tasks = myContext.Tasks.ToList();
+            return View(tasks);
         }
         // -----------------------------EDIT------------------------------------------------
         [HttpGet]
@@ -64,9 +65,9 @@ namespace Project2Section1Group6.Controllers
         {
             ViewBag.Cat = myContext.Categories.ToList();
 
-            var application = myContext.Tasks.Single(x => x.TaskID == localID);
+            var mytasks = myContext.Tasks.Single(x => x.TaskID == 1);
 
-            return View("CreateTask", application);
+            return View("CreateTasks", mytasks);
         }
         [HttpPost]
         public IActionResult Edit(Task t) // Change Database values

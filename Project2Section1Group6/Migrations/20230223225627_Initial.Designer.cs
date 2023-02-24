@@ -8,7 +8,7 @@ using Project2Section1Group6.Models;
 namespace Project2Section1Group6.Migrations
 {
     [DbContext(typeof(TaskContext))]
-    [Migration("20230222180803_Initial")]
+    [Migration("20230223225627_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -95,6 +95,26 @@ namespace Project2Section1Group6.Migrations
                             QuadrantNumber = 1,
                             TaskNotes = "",
                             TaskTitle = "Do your chores"
+                        },
+                        new
+                        {
+                            TaskID = 2,
+                            CategoryID = 1,
+                            Completed = false,
+                            DueDate = "2023-08-06",
+                            QuadrantNumber = 1,
+                            TaskNotes = "",
+                            TaskTitle = "Test Not Completed"
+                        },
+                        new
+                        {
+                            TaskID = 3,
+                            CategoryID = 1,
+                            Completed = true,
+                            DueDate = "2023-08-06",
+                            QuadrantNumber = 1,
+                            TaskNotes = "",
+                            TaskTitle = "Test Completed"
                         });
                 });
 

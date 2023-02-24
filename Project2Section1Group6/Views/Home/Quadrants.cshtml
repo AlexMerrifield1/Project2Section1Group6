@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Quadrants";
+}
+
+@model List<Project2Section1Group6.Models.Task>
+
+<div class="container border border-dark rounded">
+    <div class="row mx-auto">
+        <div class="col-12">Stephen Covey's Time Management Matrix</div>
+    </div>
+    <div class="row border">
+        <div class="col-2 border"></div>
+        <div class="col-5 border font-weight-bold">Urgent</div>
+        <div class="col-5 border font-weight-bold">Not Urgent</div>
+    </div>
+    <div class="row border">
+        <div class="col-2 border font-weight-bold">Important</div>
+        <div class="col-5 border">
+            <span class="font-weight-bold p-3">Quadrant 1</span>
+            @foreach (var x in Model)
+            {
+                @if (x.Completed) {}
+                else if (x.QuadrantNumber == 1)
+                {
+                    <div>@x.TaskTitle <span class="float-right"><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskID">Edit</a>&ensp;<a asp-controller="Home" asp-action="Delete">Delete</a></span></div>
+                }
+            }
+        </div>
+        <div class="col-5 border">
+            <span class="font-weight-bold p-3">Quadrant 2</span>
+            @foreach (var x in Model)
+            {
+                @if (x.Completed) { }
+                else if (x.QuadrantNumber == 2)
+                {
+                    <div>@x.TaskTitle <span class="float-right"><a>Edit</a>&ensp;<a>Delete</a></span></div>
+                }
+            }
+        </div>
+    </div>
+    <div class="row border">
+        <div class="col-2 border font-weight-bold">Not Important</div>
+        <div class="col-5 border">
+            <span class="font-weight-bold p-3">Quadrant 3</span>
+            @foreach (var x in Model)
+            {
+                @if (x.Completed) { }
+                else if (x.QuadrantNumber == 3)
+                {
+                    <div>@x.TaskTitle <span class="float-right"><a>Edit</a>&ensp;<a>Delete</a></span></div>
+                }
+            }
+        </div>
+        <div class="col-5 border">
+            <span class="font-weight-bold p-3">Quadrant 4</span>
+            @foreach (var x in Model)
+            {
+                @if (x.Completed) { }
+                else if (x.QuadrantNumber == 4)
+                {
+                    <div>@x.TaskTitle <span class="float-right"><a>Edit</a>&ensp;<a>Delete</a></span></div>
+                }
+            }
+        </div>
+    </div>
+</div>
